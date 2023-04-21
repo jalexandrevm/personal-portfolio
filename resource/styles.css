@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Prosto One', cursive;
+}
+
+html {
+  overflow-x: scroll;
+  font-size: 16px;
+}
+
+body {
+  width: 100vw;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0.25rem 0;
+}
+
+Tribute Page h1,
+h2,
+h3 {
+  font-family: 'MuseoModerno', cursive;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+#container {
+  padding: 0;
+  margin: 0 auto;
+}
+
+#menu-bar {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+#menu-btn {
+  border-radius: 10px;
+}
+
+/* main {} */
+
+#welcome {
+  z-index: 1;
+  height: 100vh;
+}
+
+.block-background-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url('../img/bg-note-coffee-office.png');
+  background-size: cover;
+  height: 100%;
+  z-index: -3;
+  width: 100%;
+}
+
+#projects {
+  border-bottom: 1px solid;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+#projects a {
+  text-decoration: none;
+  text-decoration-line: none;
+  color: black;
+  cursor: pointer;
+}
+
+.project-image {
+  grid-area: 'image';
+}
+
+.project-desc {
+  grid-area: 'info';
+}
+
+@media only screen and (min-width: 576px) and (max-width: 992px) {
+  #project-list {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .project {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "image description";
+    gap: 1rem;
+  }
+
+  .project:nth-child(even) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "description image";
+  }
+
+  .project-image {
+    grid-area: image;
+  }
+
+  .project-description {
+    grid-area: description;
+  }
+
+  .project-image,
+  .project-description {
+    align-self: center;
+  }
+}
+
+#skills {
+  border-bottom: 1px solid;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+#skills h2 {
+  margin-bottom: 2rem;
+}
+
+#skills .tech-icons {
+  margin: 5px;
+}
+
+#skills #tech-desc {
+  border: 1px solid;
+  display: none;
+  width: 90%;
+  height: auto;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: rgb(236, 182, 64);
+  border-radius: 1rem;
+}
+
+#contacts {
+  height: 100vh;
+}
+
+.contact-form {
+  width: 300px;
+  padding: 10px;
+}
+
+.fields {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.fields input,
+textarea {
+  width: 100%;
+  padding-left: 5px;
+}
+
+#contacts {
+  height: auto;
+  min-height: 100vh;
+}
+
+#contacts #form-submit {
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .contact-form {
+    width: 400px;
+  }
+}
