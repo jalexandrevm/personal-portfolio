@@ -10,10 +10,23 @@
 html {
   overflow-x: scroll;
   font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+@media only screen and (max-width: 576px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 18px;
+  }
 }
 
 body {
-  width: 100vw;
+  width: 100%;
 }
 
 p {
@@ -21,14 +34,21 @@ p {
   margin: 0.25rem 0;
 }
 
-Tribute Page h1,
+h1,
 h2,
 h3 {
   font-family: 'MuseoModerno', cursive;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+
+@media only screen and (min-width: 992px) {
+  h1 {
+    font-size: 4rem;
+  }
 }
 
 h2 {
@@ -39,28 +59,68 @@ h3 {
   font-size: 1.5rem;
 }
 
+#container,
+#menu-bar {
+  max-width: 1100px;
+}
+
 #container {
   padding: 0;
   margin: 0 auto;
 }
 
 #menu-bar {
-  width: 100%;
-  position: relative;
+  position: fixed;
   top: 0;
-  left: 0;
+  width: 100%;
   z-index: 5;
+  display: flex;
+  background-color: aqua;
+}
+
+#drop-down-btn {
+  width: auto;
 }
 
 #menu-btn {
   border-radius: 10px;
+  margin: 2px 3px;
+}
+
+#nav-bar {
+  width: 100%;
+}
+
+#nav-bar ul {
+  margin: 0;
+}
+
+#nav-bar ul li {
+  margin-inline-end: 1rem;
+}
+
+#nav-bar ul li a {
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+  font-family: 'Prosto One', cursive;
+}
+
+@media only screen and (min-width: 576px) {
+  #nav-bar {
+    justify-content: center;
+  }
 }
 
 /* main {} */
+main {
+  margin-top: 2rem;
+}
 
 #welcome {
   z-index: 1;
-  height: 100vh;
+  width: 100%;
+  height: calc(100vh - 50px);
 }
 
 .block-background-image {
@@ -76,10 +136,15 @@ h3 {
   width: 100%;
 }
 
+#welcome-banner {
+  background-image: linear-gradient(black, 60%, transparent);
+  border-radius: 15px;
+}
+
 #projects {
   border-bottom: 1px solid;
-  padding: 2rem;
-  margin: 2rem 0;
+  padding: 1rem;
+  margin: 0;
 }
 
 #projects a {
@@ -179,14 +244,22 @@ textarea {
 }
 
 #contacts {
+  margin: 0;
+  padding: 0;
   height: auto;
-  min-height: 100vh;
+  min-height: calc(100vh - 35px);
 }
 
 #contacts #form-submit {
   border: 1px solid;
   border-radius: 10px;
   padding: 0 10px;
+}
+
+#projects,
+#skills,
+#contacts {
+  padding-top: 40px;
 }
 
 @media only screen and (min-width: 768px) {
